@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "updated": "2026-11-11",
+  "urgent": [
+    "chest pain", "can't breathe", "cannot breathe", "difficulty breathing",
+    "short of breath", "not breathing", "blue lips", "heavy bleeding",
+    "bleeding a lot", "unconscious", "fainted", "collapsed", "cannot wake",
+    "seizure", "convulsion", "convulsing", "fits", "had a fit", "having a fit",
+    "shaking uncontrollably", "stiff neck", "confused",
+    "vomiting blood", "vomited blood", "black stool", "face drooping",
+    "slurred speech", "cannot move", "swollen throat", "swollen face",
+    "stroke", "heart attack", "snake", "poison", "swallowed"
+  ],
+  "self_harm": ["want to die", "kill myself", "hurt myself", "suicid", "end my life"],
+  "clinic_soon": [
+    "blood in urine", "blood in stool", "coughing blood", "night sweats",
+    "weight loss", "losing weight", "yellow eyes", "yellow skin", "pus",
+    "painful urination", "burning when i pee", "rash", "eye pain",
+    "severe pain", "lump", "swollen glands", "dog bite", "animal bite",
+    "not eating", "not feeding", "won't feed", "coughing for weeks"
+  ],
+  "hygiene": {
+    "Handwashing": [
+      "Wash hands with soap and clean water for at least 20 seconds.",
+      "No soap? Rub hands with clean wood ash and rinse. It works much better than water alone.",
+      "Wash after the toilet, before eating or cooking, and after touching animals.",
+      "A tippy tap (a hanging container with a foot-pulled string) saves water and costs almost nothing."
+    ],
+    "Water safety": [
+      "Boil water at a rolling boil for 1 minute, then cool it in a covered container.",
+      "No fuel? Fill a clear plastic bottle and leave it in full sun for about 6 hours.",
+      "If water is cloudy, let it settle and pour it through a clean cloth first.",
+      "Keep drinking water covered and use a clean cup with a handle, not dipped hands."
+    ],
+    "Food hygiene": [
+      "Cook meat, eggs and fish fully. Eat cooked food while it is hot.",
+      "Keep raw and cooked food apart, and use separate knives and boards.",
+      "Wash fruit and vegetables with clean water before eating.",
+      "Cover leftovers and reheat until steaming hot. Do not leave food out for hours."
+    ],
+    "Teeth and mouth": [
+      "Brush twice a day, morning and before bed.",
+      "Use fluoride toothpaste if you can. Without it, brush with a soft brush and water.",
+      "Rinse with warm salt water for sore gums.",
+      "Cut back on sugary drinks and sweets, especially before sleeping."
+    ],
+    "Body and clothes": [
+      "Bathe daily if possible, especially after sweating.",
+      "Dry well between toes and in skin folds to prevent fungus.",
+      "Wash clothes and bedding regularly and dry them in the sun.",
+      "Cut nails short and clean. Dirt under nails carries germs."
+    ],
+    "Toilet and waste": [
+      "Always use a toilet or latrine. Keep it clean and covered.",
+      "Wash hands after every visit.",
+      "Bury or bin rubbish. Keep it away from your water source."
+    ],
+    "Mosquito and fly control": [
+      "Empty containers holding standing water at least once a week.",
+      "Sleep under a mosquito net if you have one.",
+      "Keep food and water covered to keep flies off.",
+      "Clear tall grass and rubbish around the home."
+    ],
+    "Coughs and colds": [
+      "Cough or sneeze into your elbow, not your hands.",
+      "Open windows to let fresh air through rooms.",
+      "Keep your distance from others when you are unwell.",
+      "A cough lasting 2 weeks or more needs a clinic check."
+    ],
+    "Cuts and wounds": [
+      "Rinse with clean running water and wash around the wound with soap.",
+      "Cover with a clean cloth or bandage and change it daily.",
+      "Go to the clinic if the wound is deep, dirty, from an animal bite, or turns red, swollen or has pus."
+    ],
+    "Menstrual hygiene": [
+      "Change pads or clean cloths every 4 to 8 hours.",
+      "Wash reusable cloths with soap and clean water, and dry them fully, ideally in sunlight.",
+      "Store clean cloths in a clean, dry place and wash your hands before and after changing."
+    ]
+  },
+  "faq": [
+    {
+      "title": "Diarrhoea and dehydration",
+      "keywords": ["diarrhoea", "diarrhea", "runny stomach", "loose stool", "ors", "dehydration", "dehydrated"],
+      "answer": "Drink plenty of fluids often. Use ORS packets if you have them. Home mix: 6 level teaspoons of sugar and half a level teaspoon of salt in 1 litre of boiled, cooled water. Keep eating small amounts. Wash hands with soap or ash after the toilet and before food.",
+      "clinic_if": "there is blood in the stool, it lasts over 2 days, you cannot keep fluids down, you are very thirsty or weak, or it is a baby or young child. Take babies and young children early."
+    },
+    {
+      "title": "Fever",
+      "keywords": ["fever", "temperature", "hot body", "chills"],
+      "answer": "Rest, drink plenty of safe water, and wear light clothing. A lukewarm sponge bath can make you more comfortable. A fever is a sign of illness, and it can be malaria or another serious infection.",
+      "clinic_if": "it lasts 2 days or more, comes with severe headache, stiff neck, rash, confusion, fits or fast breathing, or it is in a baby, a pregnant woman or an older person. In malaria areas get tested early."
+    },
+    {
+      "title": "Cough",
+      "keywords": ["cough", "coughing", "phlegm"],
+      "answer": "Cough into your elbow, open windows for fresh air, drink warm fluids, and keep away from others while unwell. Honey in warm water can soothe a cough in adults and children over 1 year.",
+      "clinic_if": "the cough lasts 2 weeks or more, because it could be TB. Go sooner for blood in phlegm, night sweats, weight loss, fast or hard breathing, or if it is a young child."
+    },
+    {
+      "title": "Sore throat",
+      "keywords": ["sore throat", "throat", "tonsils", "painful swallowing", "difficulty swallowing"],
+      "answer": "Gargle with warm salt water, drink warm fluids, and rest your voice.",
+      "clinic_if": "you cannot swallow, you are drooling, breathing is hard, it lasts over 3 days, or there is a high fever."
+    },
+    {
+      "title": "Headache",
+      "keywords": ["headache", "head hurts", "migraine"],
+      "answer": "Rest in a quiet place and drink water. Headaches are often linked to not drinking enough, not eating, or tiredness.",
+      "clinic_if": "the headache is sudden and severe, comes with fever and a stiff neck, follows a head injury, comes with vision changes or weakness, or keeps coming back."
+    },
+    {
+      "title": "Burns and scalds",
+      "keywords": ["burn", "burns", "burnt", "scald", "scalded", "boiling water", "hot oil"],
+      "answer": "Cool the burn under cool running water for 20 minutes straight away. Remove rings and tight clothing before swelling starts. Cover loosely with a clean cloth or cling film. Do not put butter, oil, toothpaste or ash on a burn, and do not burst blisters.",
+      "clinic_if": "the burn is large, on the face, hands, feet or private parts, deep or white or charred, caused by chemicals or electricity, or if it is any burn on a child."
+    },
+    {
+      "title": "Nosebleed",
+      "keywords": ["nosebleed", "nose bleed", "nose bleeds", "bleeding nose", "nose bleeding", "nose is bleeding", "nose keeps bleeding", "bleeding from my nose", "bleeding from the nose"],
+      "answer": "Sit up and lean forward. Pinch the soft part of the nose for 10 to 15 minutes without letting go. Spit out any blood. Do not lie down or tilt your head back.",
+      "clinic_if": "bleeding lasts more than 20 minutes, follows a head injury, or happens often."
+    },
+    {
+      "title": "Malaria prevention",
+      "keywords": ["malaria", "mosquito", "mosquitoes", "net", "nets"],
+      "answer": "Sleep under a net, empty standing water at least weekly, cover arms and legs at dusk, and clear tall grass near the home.",
+      "clinic_if": "you have fever, chills, headache or body pains in a malaria area. Get tested early, especially children and pregnant women."
+    },
+    {
+      "title": "Cholera and typhoid prevention",
+      "keywords": ["cholera", "typhoid", "dirty water", "safe water"],
+      "answer": "Drink boiled or treated water, wash hands with soap or ash, cook food fully, use a latrine, and keep waste away from water sources.",
+      "clinic_if": "there is sudden heavy watery diarrhoea, vomiting or leg cramps. Go immediately and sip ORS on the way."
+    },
+    {
+      "title": "Taking medicine properly",
+      "keywords": ["antibiotic", "antibiotics", "finish medicine", "stop taking", "medicine", "tablets", "pills", "feel better"],
+      "answer": "If a clinic gave you medicine, take it exactly as told and finish the course even when you feel better, unless the clinic says to stop. Never share your medicine and never take someone else's. Ask a pharmacist if you are unsure how to take it. Feeling better does not always mean you are well, so keep your follow-up visits.",
+      "clinic_if": "side effects such as rash, swelling or vomiting appear, or you are not improving."
+    },
+    {
+      "title": "Medicine doses",
+      "keywords": ["dose", "dosage", "how much", "how much medicine", "how much paracetamol", "how many tablets", "how many pills", "child medicine", "paracetamol"],
+      "answer": "This app cannot give medicine doses. Doses depend on age, weight and the exact product. Read the label and ask a pharmacist or clinic, especially for children. Never give a child adult medicine.",
+      "clinic_if": ""
+    },
+    {
+      "title": "Long-term conditions",
+      "keywords": ["diabetes", "sugar", "blood pressure", "hypertension", "asthma", "hiv"],
+      "answer": "Long-term conditions need regular clinic care. Keep your follow-up visits, take your medicine every day as prescribed, and never stop because you feel fine. This app cannot confirm that you are well or change your treatment.",
+      "clinic_if": "symptoms return or get worse, or you have missed medicine for several days."
+    },
+    {
+      "title": "Cuts and wounds",
+      "keywords": ["cut", "wound", "scratch", "graze", "bite"],
+      "answer": "Rinse with clean running water, wash around the wound with soap, and cover with a clean cloth or bandage. Change the cover daily.",
+      "clinic_if": "the wound is deep, dirty, from an animal bite, or red, swollen or draining pus. If you are unsure about your tetanus injection, ask the clinic."
+    },
+    {
+      "title": "Stomach pain and vomiting",
+      "keywords": ["stomach", "abdominal", "belly", "vomiting", "vomit", "nausea"],
+      "answer": "Sip fluids often in small amounts, rest, and avoid heavy or oily food until it settles.",
+      "clinic_if": "the pain is severe, vomiting lasts more than a day, there is blood, high fever, you are pregnant, or you cannot pass stool or urine."
+    },
+    {
+      "title": "Toothache and gums",
+      "keywords": ["tooth", "teeth", "toothache", "gum", "gums"],
+      "answer": "Rinse with warm salt water, brush gently, and avoid sugary food and drinks.",
+      "clinic_if": "the face or jaw swells, you have a fever, pain lasts over 2 days, or you struggle to swallow or open your mouth."
+    }
+  ]
+}
