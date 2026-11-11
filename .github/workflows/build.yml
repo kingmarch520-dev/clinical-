@@ -20,21 +20,17 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Wait for Network & DNS stabilization
-        run: |
-          for i in {1..10}; do
-            nslookup archive.ubuntu.com && break
-            echo "Waiting for DNS resolution..."
-            sleep 5
-          done
-
       - name: Install system packages
         run: |
           PKGS="git zip unzip autoconf automake libtool zlib1g-dev libncurses5-dev \
-            libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev build-essential ccache"
+            libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev build-essential"
 
-          # Ensure universe repository is enabled for libtinfo5
-          sudo add-apt-repository universe -y
+          # Pre-emptively switch to the reliable archive mirror and enable universe
+          sudo tee /etc/apt/sources.list <<EOF
+          deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+          deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
+          deb http://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+          EOF
 
           for attempt in 1 2 3; do
             sudo apt-get update -y || true
@@ -45,14 +41,8 @@ jobs:
             sleep 30
           done
 
-          echo "Falling back to standard Ubuntu archive sources"
-          sudo tee /etc/apt/sources.list <<EOF
-          deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
-          deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
-          deb http://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
-          EOF
-
-          sudo apt-get update -y
+          echo "Final attempt with force fix-broken"
+          sudo apt --fix-broken install -y
           sudo apt-get install -y --fix-missing $PKGS
 
       - name: Install buildozer
