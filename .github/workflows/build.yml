@@ -20,10 +20,22 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: Wait for Network & DNS stabilization
+        run: |
+          for i in {1..5}; do
+            nslookup archive.ubuntu.com && break
+            echo "Waiting for DNS..."
+            sleep 5
+          done
+
       - name: Install system packages
         run: |
           PKGS="git zip unzip autoconf automake libtool zlib1g-dev libncurses5-dev \
             libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev build-essential ccache"
+
+          # Ensure universe repository is enabled for libtinfo5
+          sudo add-apt-repository universe -y
+
           for attempt in 1 2 3; do
             sudo apt-get update || true
             if sudo apt-get install -y --fix-missing $PKGS; then
@@ -32,9 +44,15 @@ jobs:
             echo "apt attempt $attempt failed, retrying in 30 seconds"
             sleep 30
           done
-          echo "Falling back to the direct Ubuntu mirror"
-          sudo sed -i 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list || true
-          sudo apt-get update
+
+          echo "Falling back to standard Ubuntu archive sources"
+          sudo tee /etc/apt/sources.list <<EOF
+          deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+          deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
+          deb http://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+          EOF
+
+          sudo apt-get update -y
           sudo apt-get install -y --fix-missing $PKGS
 
       - name: Install buildozer
