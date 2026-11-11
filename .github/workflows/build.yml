@@ -22,10 +22,20 @@ jobs:
 
       - name: Install system packages
         run: |
+          PKGS="git zip unzip autoconf automake libtool zlib1g-dev libncurses5-dev \
+            libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev build-essential ccache"
+          for attempt in 1 2 3; do
+            sudo apt-get update || true
+            if sudo apt-get install -y --fix-missing $PKGS; then
+              exit 0
+            fi
+            echo "apt attempt $attempt failed, retrying in 30 seconds"
+            sleep 30
+          done
+          echo "Falling back to the direct Ubuntu mirror"
+          sudo sed -i 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list || true
           sudo apt-get update
-          sudo apt-get install -y git zip unzip autoconf automake libtool pkg-config \
-            zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev \
-            libssl-dev build-essential ccache
+          sudo apt-get install -y --fix-missing $PKGS
 
       - name: Install buildozer
         run: |
