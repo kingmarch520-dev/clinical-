@@ -48,7 +48,7 @@ jobs:
           path: |
             ~/.buildozer
             .buildozer
-          key: buildozer-${{ hashFiles('buildozer.spec') }}
+          key: buildozer-${{ hashFiles('buildozer.spec', 'p4a-recipes/**') }}
 
       - name: Build debug APK
         run: |
