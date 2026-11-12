@@ -23,26 +23,18 @@ jobs:
       - name: Install system packages
         run: |
           PKGS="git zip unzip autoconf automake libtool zlib1g-dev libncurses5-dev \
-            libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev build-essential"
-
-          # Pre-emptively switch to the reliable archive mirror and enable universe
-          sudo tee /etc/apt/sources.list <<EOF
-          deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
-          deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
-          deb http://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
-          EOF
-
+            libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev build-essential ccache"
           for attempt in 1 2 3; do
-            sudo apt-get update -y || true
+            sudo apt-get update || true
             if sudo apt-get install -y --fix-missing $PKGS; then
               exit 0
             fi
             echo "apt attempt $attempt failed, retrying in 30 seconds"
             sleep 30
           done
-
-          echo "Final attempt with force fix-broken"
-          sudo apt --fix-broken install -y
+          echo "Falling back to the direct Ubuntu mirror"
+          sudo sed -i 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list || true
+          sudo apt-get update
           sudo apt-get install -y --fix-missing $PKGS
 
       - name: Install buildozer
