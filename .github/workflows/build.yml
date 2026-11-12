@@ -3,7 +3,13 @@ name: Build APK
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "**.md"
   workflow_dispatch:
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: true
 
 jobs:
   build:
