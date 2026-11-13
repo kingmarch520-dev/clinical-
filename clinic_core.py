@@ -16,8 +16,11 @@ import re
 import ssl
 import urllib.request
 
-# After hosting content.json (for example on GitHub Pages), put its link here.
-CONTENT_URL = os.environ.get("CLINIC_CONTENT_URL", "")
+# The app checks this link for newer advice. It is a public repo that holds only content.json.
+CONTENT_URL = os.environ.get(
+    "CLINIC_CONTENT_URL",
+    "https://raw.githubusercontent.com/kingmarch520-dev/pseudo-clinic-content/main/content.json",
+)
 
 APP_NAME = "Pseudo Clinic"
 TAGLINE = "The clinic that tells you to go to a real clinic."
